@@ -1,0 +1,5 @@
+stocktrader is a clojure implementation of a stock trading strategy backtesting tool I wrote for my master's thesis.
+
+I used it to backtest four stock trading strategies: a Bollinger Bands strategy, a MACD strategy, the Buy and Hold strategy, and a strategy that I devised based on knowledge of Bollinger Bands.
+
+My objective was to identify optimal (or at least good) strategy parameters using a genetic algorithm to search for the best parameter-sets.
