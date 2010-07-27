@@ -3,3 +3,33 @@ stocktrader is a clojure implementation of a stock trading strategy backtesting 
 I used it to backtest four stock trading strategies: a Bollinger Bands strategy, a MACD strategy, the Buy and Hold strategy, and a strategy that I devised based on knowledge of Bollinger Bands.
 
 My objective was to identify optimal (or at least good) strategy parameters using a genetic algorithm to search for the best parameter-sets.
+
+This library has several dependencies:
+
+Clojure dependencies:
+
+com.clojure.csv : http://github.com/davidsantiago/clojure-csv
+dke.contrib.* : http://github.com/davidkellis/dke-contrib
+net.jeffhui.mongodb : http://github.com/jeffh/clj-mongodb
+
+
+Java dependencies:
+
+MongoDB Java Driver : http://www.mongodb.org/display/DOCS/Java+Language+Center
+Joda-Time Library : http://joda-time.sourceforge.net/
+
+
+Data dependencies:
+
+To use this library as-is you need to have price history files for the companies you want to trade. The price history files
+need to hold comma-delimited price history information where each line of the file is of the following form:
+
+yyyyMMdd,hhmmss,open,high,low,close
+
+As an example, here is an excerpt from the price history file I have for AAPL.csv:
+19821101,150000,3.25000,3.37500,3.14063,3.34376
+19821102,150000,3.53126,3.68750,3.37500,3.57813
+19821103,150000,3.57813,3.84376,3.57813,3.84376
+19821104,150000,3.90626,3.98438,3.81250,3.87500
+
+The file does *not* need to be sorted by timestamp. Mine are sorted by timestamp, but they don't have to be.
